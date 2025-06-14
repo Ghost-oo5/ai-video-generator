@@ -1,11 +1,7 @@
 import React from "react";
+import { UseCaseSwitcherProps } from "../types";
 
 export type UseCase = "suplimax" | "realEstate";
-
-interface UseCaseSwitcherProps {
-  currentUseCase: UseCase;
-  onUseCaseChange: (useCase: UseCase) => void;
-}
 
 const baseButtonClass =
   "flex-1 py-3 px-4 text-sm font-medium text-center rounded-lg transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-sky-400";

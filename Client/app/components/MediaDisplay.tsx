@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { MediaDisplayProps } from "../types";
 
-export const MediaDisplay: React.FC<MediaDisplayProps> = ({
+export const MediaDisplay = ({
   title,
   imageUrl,
   videoScript,
@@ -10,7 +10,7 @@ export const MediaDisplay: React.FC<MediaDisplayProps> = ({
   showPlaceholder = true,
   placeholderText = "Generated content will appear here.",
   downloadFileName = "generated_content.txt",
-}) => {
+}: MediaDisplayProps) => {
   const handleDownloadScript = () => {
     if (!videoScript) return;
     const blob = new Blob([videoScript], { type: "text/plain;charset=utf-8" });
@@ -61,7 +61,7 @@ export const MediaDisplay: React.FC<MediaDisplayProps> = ({
               src={imageUrl}
               alt={altText || "Generated AI image"}
               className="w-full  object-cover"
-              // style={{ maxHeight: "600px" }} 
+              // style={{ maxHeight: "600px" }}
               onError={(e) => {
                 console.error("Image failed to load:", e);
                 const img = e.target as HTMLImageElement;

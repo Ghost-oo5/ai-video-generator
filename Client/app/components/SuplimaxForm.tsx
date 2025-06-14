@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import type { SuplimaxFormData } from '@/app/types';
+import type { SuplimaxFormData, SuplimaxFormProps } from '@/app/types';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -14,13 +14,6 @@ import {
   SelectLabel,
   SelectGroup
 } from '@/components/ui/select';
-
-interface SuplimaxFormProps {
-  formData: SuplimaxFormData;
-  onFormChange: (newData: SuplimaxFormData) => void;
-  onSubmit: () => void;
-  isLoading: boolean;
-}
 
 const OPTIONS = {
   tone: ['Energetic', 'Sophisticated', 'Humorous', 'Mysterious', 'Bold', 'Refreshing'],
