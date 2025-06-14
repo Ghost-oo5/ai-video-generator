@@ -23,4 +23,14 @@ export interface RealEstateFormProps {
   onFormChange: (newData: RealEstateFormData) => void;
   onSubmit: () => void;
   isLoading: boolean;
+}export interface MediaDisplayProps {
+  title: string;
+  imageUrl?: string | null;
+  videoScript?: string | null;
+  isLoading: boolean;
+  altText?: string;
+  showPlaceholder?: boolean;
+  placeholderText?: string;
+  downloadFileName?: string;
 }
+
