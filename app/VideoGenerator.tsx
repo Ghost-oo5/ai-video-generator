@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import UseCaseSwitcher, {UseCase } from './components/UseCaseSwitcher';
+import { SuplimaxSection } from './components/SuplimaxSection';
 
 
 const VideoGenerator = () => {
@@ -19,6 +20,10 @@ const VideoGenerator = () => {
       </header>
 
       <UseCaseSwitcher currentUseCase={useCase} onUseCaseChange={setUseCase} />
+      
+      <main className="mt-8">
+         <SuplimaxSection />
+      </main>
     </div>
   );
 };
