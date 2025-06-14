@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import UseCaseSwitcher, {UseCase } from './components/UseCaseSwitcher';
 import { SuplimaxSection } from './components/SuplimaxSection';
+import { RealEstateSection } from './components/RealEstateSection';
 
 
 const VideoGenerator = () => {
@@ -22,7 +23,7 @@ const VideoGenerator = () => {
       <UseCaseSwitcher currentUseCase={useCase} onUseCaseChange={setUseCase} />
       
       <main className="mt-8">
-         <SuplimaxSection />
+        {useCase === 'suplimax' ? <SuplimaxSection /> : <RealEstateSection />}
       </main>
     </div>
   );
