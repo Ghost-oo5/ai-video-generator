@@ -1,20 +1,20 @@
-// models/SuplimaxGeneration.js
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
+
 
 const SuplimaxSchema = new mongoose.Schema({
-  inputs: {
+   inputs: {
     features: String,
     tone: String,
     audience: String,
     videoStyle: String,
   },
-  imagePrompt: String,
-  imageBase64: String,
-  imageDescription: String, // the "text" response
-  videoScript: String,
+  imagePrompt: { type: String, required: true },
+  imageBase64: { type: String, required: true },       // ← flat string field
+  imageDescription: String,
+  videoScript: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 
-const Suplimax = mongoose.model('SuplimaxGeneration', SuplimaxSchema);
+const Suplimax = mongoose.model("Suplimax", SuplimaxSchema);
 
-module.exports ={Suplimax}
+module.exports = { Suplimax };

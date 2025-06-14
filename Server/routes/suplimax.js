@@ -1,20 +1,26 @@
-// routes/suplimax.js
-import express from 'express';
-import SuplimaxGeneration from '../models/SuplimaxGeneration.js';
+const express = require("express")
+const { Suplimax } = require("../Model/SuplimaxGeneration");
+
 
 const router = express.Router();
+
+router.get("/", async (req, res) => {
+  const result = await Suplimax.find();
+  res.send(result);
+  res.send('suplimax');
+});
 
 router.post('/', async (req, res) => {
   try {
     const {
-      inputs,           // form inputs (features, tone, etc.)
-      imagePrompt,      // the prompt used to generate image
-      image,            // base64 string from Gemini response
-      imageDescription, // the "text" description from image API
-      videoScript       // full script from script API
+      inputs,           
+      imagePrompt,      
+      image,            
+      imageDescription, 
+      videoScript       
     } = req.body;
 
-    const record = await SuplimaxGeneration.create({
+    const record = await Suplimax.create({
       inputs,
       imagePrompt,
       imageBase64: image,
